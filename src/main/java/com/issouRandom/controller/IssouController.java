@@ -7,7 +7,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -15,8 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/issou")
 public class IssouController {
-
-
 
     @ResponseBody
     @RequestMapping(value = "/wallpaper/random",
@@ -46,6 +43,17 @@ public class IssouController {
 
         Integer randomImageNumber = randomBetween(1, 341);
         return getImages("images/icon/" + randomImageNumber + ".png");
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/icon/random/number",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer getRandomIconNumber() throws IOException {
+
+        Integer randomImageNumber = randomBetween(1, 341);
+        return randomImageNumber;
 
     }
 
