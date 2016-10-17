@@ -1,0 +1,1 @@
+web: java -jar issou-randomizer-1.0-SNAPSHOT.jar
