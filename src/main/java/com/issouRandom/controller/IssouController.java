@@ -27,6 +27,16 @@ public class IssouController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/wallpaper/random/number",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer getRandomWallpaperNumber() throws IOException {
+
+        Integer randomImageNumber = randomBetween(1, 14);
+        return randomImageNumber;
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/wallpaper/{id}",
             method = RequestMethod.GET,
             produces = MediaType.IMAGE_PNG_VALUE)
