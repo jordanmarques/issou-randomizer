@@ -24,7 +24,7 @@ public class IssouController {
             produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getRandomWallpaper() throws IOException {
 
-        Integer randomImageNumber = randomBetween(1, getDirectorySize("images/wallpaper"));
+        Integer randomImageNumber = randomBetween(1, 14);
         return getImages("images/wallpaper/" + randomImageNumber + ".png");
 
     }
@@ -44,7 +44,7 @@ public class IssouController {
             produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getRandomIcon() throws IOException {
 
-        Integer randomImageNumber = randomBetween(1, getDirectorySize("images/icon"));
+        Integer randomImageNumber = randomBetween(1, 341);
         return getImages("images/icon/" + randomImageNumber + ".png");
 
     }
