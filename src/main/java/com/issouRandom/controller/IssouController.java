@@ -76,22 +76,6 @@ public class IssouController {
 
     }
 
-
-
-    private Integer getDirectorySize(String path){
-
-        Integer size = 0;
-
-        try {
-            List<String> files = IOUtils.readLines(IssouController.class.getClassLoader()
-                    .getResourceAsStream(path));
-            size = files.size();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return size;
-    }
-
     private Integer randomBetween(Integer min, Integer max){
         return  (int)(Math.random() * (max-min)) + min;
     }
